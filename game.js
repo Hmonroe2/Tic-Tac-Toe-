@@ -3,7 +3,7 @@ class Game {
     this.player1 = player1
     this.player2 = player2
     this.turn = player1
-    this.winCount = 0
+    this.boardCount = 0
     this.winner = undefined
     this.currentBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     this.winningCombinations = [
@@ -28,7 +28,7 @@ class Game {
       }
     }
   }
-  
+
   determineWinner() {
     for (var i = 0; i < this.winningCombinations.length; i++) {
       if ((player1.currentPicks.includes(this.winningCombinations[i][0])) &&
@@ -47,11 +47,21 @@ class Game {
       }
     }
   }
-
+  // checkCurrentBoard(){
+  //   for (var i = 0; i < currentBoard.length; i++){
+  //
+  //   }
+  // }
   resetPlayerData() {
     this.winner = undefined
     this.turn = player1
     player1.currentPicks = []
     player2.currentPicks = []
+  }
+
+  determineTie(){
+    if(this.boardCount === 9 && this.winner === undefined){
+      this.winner = "tie"
+    }
   }
 }
