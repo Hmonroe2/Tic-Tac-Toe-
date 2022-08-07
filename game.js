@@ -21,12 +21,12 @@ class Game {
   determinePlayerMoves(){
     var playerMoves = []
     playerMoves.push(this.turn.currentPicks)
-    return playerMoves
+
   }
 
   checkCurrentBoard(){
     for (var i = 0; i < this.currentBoard.length; i++){
-      if(player1.currentPicks.includes(this.currentBoard[i])){
+      if(this.turn.currentPicks.includes(this.currentBoard[i])){
         this.currentBoard.splice(i,1)
         this.boardCount++
       }
@@ -34,13 +34,13 @@ class Game {
   }
 
   determinePlayerTurn() {
+    this.boardCount++
     if (this.winner === undefined) {
       if (this.turn === player1) {
-        this.turn = player2
+         return this.turn = player2
         console.log(`this is player 2`)
-      } else
-      if (this.turn === player2) {
-        this.turn = player1
+      } else {
+        return this.turn = player1
         console.log(`this is player 1`)
       }
     }
@@ -68,7 +68,6 @@ class Game {
   resetPlayerData() {
     if(this.boardCount === 9 || this.winner === player1 || this.winner === player2){
     this.winner = undefined
-    this.turn = player1
     player1.currentPicks = []
     player2.currentPicks = []
     this.boardCount = 0
