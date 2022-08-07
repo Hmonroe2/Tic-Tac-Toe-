@@ -3,7 +3,7 @@ class Game {
     this.player1 = player1
     this.player2 = player2
     this.turn = player1
-    this.winCount = 0
+    this.boardCount = 0
     this.winner = undefined
     this.currentBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     this.winningCombinations = [
@@ -18,17 +18,34 @@ class Game {
     ]
   }
 
-  determinePlayerTurn() {
-    if (this.winner === undefined) {
-      if (this.turn === player1) {
-        this.turn = player2
-      } else
-      if (this.turn === player2) {
-        this.turn = player1
+  determinePlayerMoves(){
+    var playerMoves = []
+    playerMoves.push(this.turn.currentPicks)
+
+  }
+
+  checkCurrentBoard(){
+    for (var i = 0; i < this.currentBoard.length; i++){
+      if(this.turn.currentPicks.includes(this.currentBoard[i])){
+        this.currentBoard.splice(i,1)
+        this.boardCount++
       }
     }
   }
-  
+
+  determinePlayerTurn() {
+    this.boardCount++
+    if (this.winner === undefined) {
+      if (this.turn === player1) {
+         return this.turn = player2
+        console.log(`this is player 2`)
+      } else {
+        return this.turn = player1
+        console.log(`this is player 1`)
+      }
+    }
+  }
+
   determineWinner() {
     for (var i = 0; i < this.winningCombinations.length; i++) {
       if ((player1.currentPicks.includes(this.winningCombinations[i][0])) &&
@@ -49,9 +66,16 @@ class Game {
   }
 
   resetPlayerData() {
+    if(this.boardCount === 9 || this.winner === player1 || this.winner === player2){
     this.winner = undefined
-    this.turn = player1
     player1.currentPicks = []
     player2.currentPicks = []
+    this.boardCount = 0
+  }
+}
+  determineTie(){
+    if(this.boardCount === 9 && this.winner === undefined){
+      this.winner = "tie"
+    }
   }
 }
