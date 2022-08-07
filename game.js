@@ -20,8 +20,9 @@ class Game {
 
   determinePlayerMoves(){
     var playerMoves = []
-    playerMoves.push(this.turn.currentPicks)
-
+    playerMoves.push(this.player1.currentPicks)
+    checkCurrentBoard()
+    return playerMoves
   }
 
   checkCurrentBoard(){
@@ -46,21 +47,14 @@ class Game {
     }
   }
 
-  determineWinner() {
+  determineWinner(player) {
     for (var i = 0; i < this.winningCombinations.length; i++) {
-      if ((player1.currentPicks.includes(this.winningCombinations[i][0])) &&
-        (player1.currentPicks.includes(this.winningCombinations[i][1])) &&
-        (player1.currentPicks.includes(this.winningCombinations[i][2]))) {
-        console.log(`player1 is winner`)
-        this.winner = player1
-        player1.wins++
-      }
-      if ((player2.currentPicks.includes(this.winningCombinations[i][0])) &&
-        (player2.currentPicks.includes(this.winningCombinations[i][1])) &&
-        (player2.currentPicks.includes(this.winningCombinations[i][2]))) {
-        console.log(`player2 is winner`)
-        this.winner = player2
-        player2.wins++
+      if ((player.currentPicks.includes(this.winningCombinations[i][0])) &&
+        (player.currentPicks.includes(this.winningCombinations[i][1])) &&
+        (player.currentPicks.includes(this.winningCombinations[i][2]))) {
+        console.log(`${player.id} is winner`)
+        this.winner = player
+        player.wins++
       }
     }
   }

@@ -6,7 +6,7 @@ var gameBoard = document.querySelector(".main-game")
 var player1WinCount = document.querySelector(".winCount1")
 var player2WinCount = document.querySelector(".winCount2")
 
-mainGame.addEventListener('click', identifyBox)
+mainGame.addEventListener('click', startGame)
 gameBoard.classList.remove("hidden")
 
 
@@ -14,7 +14,7 @@ var player1 = new Player('Hunter', `🏒 `)
 var player2 = new Player('Kristin', `🥅`)
 var game = new Game(player1, player2)
 
-function identifyBox(event) {
+function startGame(event) {
 
   if (event.target.textContent.includes('❌') || event.target.textContent.includes('⭕')) {
     return alert(`please click a vaild spot`)
@@ -23,17 +23,15 @@ function identifyBox(event) {
     event.target.innerText = `❌`
     whosTurn.innerText = `It is ${player2.id} turn!`
     player1.currentPicks.push(parseInt(event.target.dataset.box))
-    // game.boardCount++
     game.determinePlayerTurn()
-    game.determineWinner()
+    game.determineWinner(player1)
     game.determineTie()
   } else{
     event.target.innerText = `⭕`
     whosTurn.innerText = `It is ${player1.id} turn!`
     player2.currentPicks.push(parseInt(event.target.dataset.box))
-    // game.boardCount++
     game.determinePlayerTurn()
-    game.determineWinner()
+    game.determineWinner(player2)
     game.determineTie()
   }
   displayWinner()
@@ -46,7 +44,7 @@ function displayWinner() {
     whosTurn.innerText = `${player1.id} is the WINNER !!!`
     gameBoard.classList.add('hidden')
     game.turn = player2
-    setTimeout(resetGame, 2000)
+    setTimeout(resetGame, 3000)
 
   }
   if (game.winner === player2) {
@@ -54,14 +52,13 @@ function displayWinner() {
     whosTurn.innerText = `${player2.id} is the WINNER !!!`
     gameBoard.classList.add('hidden')
     game.turn = player1
-    setTimeout(resetGame, 2000)
+    setTimeout(resetGame, 3000)
   }
   if (game.winner === `tie`) {
     whosTurn.innerText = "It is a tie!"
     setTimeout(resetGame, 2000)
   }
 }
-// var gameTimeout = setTimeout(resetGame, 2000)
 
 function resetGame() {
   for (var i = 0; i < gameBoxes.length; i++) {
