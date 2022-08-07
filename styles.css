@@ -82,6 +82,7 @@ h1 {
   text-align: center;
   height: auto;
   width: 400px;
+  background-color: red;
 }
 
 .main-game {
@@ -89,10 +90,13 @@ h1 {
   width: 400px;
   display: table;
   border-collapse: collapse;
-  background-color: red;
+
 }
 
 .avs, .redwing {
   height: 100px;
   width: 100px;
+}
+.hidden {
+  display: none;
 }
