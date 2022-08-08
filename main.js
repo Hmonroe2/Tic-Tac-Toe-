@@ -15,27 +15,29 @@ var player2 = new Player('Kristin', `🥅`)
 var game = new Game(player1, player2)
 
 function startGame(event) {
-
   if (event.target.textContent.includes('❌') || event.target.textContent.includes('⭕')) {
     return alert(`please click a vaild spot`)
   }
   if (game.turn === player1) {
     event.target.innerText = `❌`
-    whosTurn.innerText = `It is ${player2.id} turn!`
     player1.currentPicks.push(parseInt(event.target.dataset.box))
+    displayTurn(player1)
     game.determinePlayerTurn()
     game.determineWinner(player1)
     game.determineTie()
   } else{
     event.target.innerText = `⭕`
-    whosTurn.innerText = `It is ${player1.id} turn!`
     player2.currentPicks.push(parseInt(event.target.dataset.box))
+    displayTurn(player2)
     game.determinePlayerTurn()
     game.determineWinner(player2)
     game.determineTie()
   }
   displayWinner()
+}
 
+function displayTurn(player){
+ whosTurn.innerText = `It is ${player.id} turn!`
 }
 
 function displayWinner() {
