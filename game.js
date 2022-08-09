@@ -2,9 +2,9 @@ class Game {
   constructor(player1, player2) {
     this.player1 = player1
     this.player2 = player2
-    this.turn = player1
+    this.turn = player2
     this.boardCount = 0
-    this.winner = undefined
+    this.winner = null
     this.currentBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     this.winningCombinations = [
       [1, 2, 3],
@@ -18,27 +18,30 @@ class Game {
     ]
   }
 
-  determinePlayerMoves(){
-    var playerMoves = []
-    playerMoves.push(this.player1.currentPicks)
-    checkCurrentBoard()
-    return playerMoves
-  }
 
-  checkCurrentBoard(){
-    for (var i = 0; i < this.currentBoard.length; i++){
-      if(this.turn.currentPicks.includes(this.currentBoard[i])){
-        this.currentBoard.splice(i,1)
-        this.boardCount++
-      }
-    }
-  }
+
+  //
+  // determinePlayerMoves() {
+  //   var playerMoves = []
+  //   playerMoves.push(this.player1.currentPicks)
+  //   checkCurrentBoard()
+  //   return playerMoves
+  // }
+  //
+  // checkCurrentBoard() {
+  //   for (var i = 0; i < this.currentBoard.length; i++) {
+  //     if (this.turn.currentPicks.includes(this.currentBoard[i])) {
+  //       this.currentBoard.splice(i, 1)
+  //       this.boardCount++
+  //     }
+  //   }
+  // }
 
   determinePlayerTurn() {
     this.boardCount++
-    if (this.winner === undefined) {
+    if (this.winner === null) {
       if (this.turn === player1) {
-         return this.turn = player2
+        return this.turn = player2
         console.log(`this is player 2`)
       } else {
         return this.turn = player1
@@ -60,15 +63,15 @@ class Game {
   }
 
   resetPlayerData() {
-    if(this.boardCount === 9 || this.winner === player1 || this.winner === player2){
-    this.winner = undefined
-    player1.currentPicks = []
-    player2.currentPicks = []
-    this.boardCount = 0
+    if (this.boardCount === 9 || this.winner === player1 || this.winner === player2) {
+      this.winner = null
+      player1.currentPicks = []
+      player2.currentPicks = []
+      this.boardCount = 0
+    }
   }
-}
-  determineTie(){
-    if(this.boardCount === 9 && this.winner === undefined){
+  determineTie() {
+    if (this.boardCount === 9 && this.winner === null) {
       this.winner = "tie"
     }
   }
