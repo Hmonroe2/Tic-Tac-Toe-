@@ -34,10 +34,10 @@
   - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
   - [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 ## Contributors
-  - Hunter_Monroe
+  - Hunter Monroe 
 ## LinkedIn Profiles
   - Hunter Monroe: https://www.linkedin.com/in/hunter-monroe-035ab0188/
 ## Github
   - Hunter Monroe: https://github.com/Hmonroe2
 ## Project Specs
- ![Turing]((https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html)
+ - [Turing](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html)
