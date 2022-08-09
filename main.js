@@ -49,23 +49,29 @@ function displayTurn(player) {
 function displayWinnerBanner(player){
   whosTurn.innerText = `${player.id} is the WINNER !!!`
 }
+function unhide(element){
+  element.classList.remove("hidden")
+}
+function hide(element){
+  element.classList.add("hidden")
+}
 
 function displayWinner() {
   if (game.winner === player1) {
     player1WinCount.innerText = `Wins:${player1.wins}`
-    winningRick.classList.remove("hidden")
     whosTurn.innerText = `${player1.id} is the WINNER !!!`
-    gameBoard.classList.add('hidden')
     game.turn = player2
+    unhide(winningRick)
+    hide(gameBoard)
     setTimeout(resetGame, 3000)
 
   }
   if (game.winner === player2) {
     player2WinCount.innerText = `Wins:${player2.wins}`
-    winningMorty.classList.remove('hidden')
     whosTurn.innerText = `${player2.id} is the WINNER !!!`
-    gameBoard.classList.add('hidden')
     game.turn = player1
+    unhide(winningMorty)
+    hide(gameBoard)
     setTimeout(resetGame, 3000)
   }
   if (game.winner === `tie`) {
@@ -78,9 +84,9 @@ function resetGame() {
   for (var i = 0; i < gameBoxes.length; i++) {
     gameBoxes[i].innerText = " "
   }
-  winningMorty.classList.add("hidden")
-  winningRick.classList.add("hidden")
   whosTurn.innerText = 'Lets play Tic Tac Toe!!'
-  gameBoard.classList.remove('hidden')
+  hide(winningRick)
+  hide(winningMorty)
+  unhide(gameBoard)
   game.resetPlayerData()
 }
