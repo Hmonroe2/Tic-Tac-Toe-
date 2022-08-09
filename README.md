@@ -4,7 +4,6 @@
   - [Technologies](#technologies)
   - [Features](#features)
   - [Illustrations](#illustrations)
-  - [Deployed Page](#deployed-page)
   - [Possible Future Extensions](#possible-future-extensions)
   - [Set Up](#set-up)
   - [Organizational Resources](#organizational-resources)
@@ -34,7 +33,7 @@
   - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
   - [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 ## Contributors
-  - Hunter Monroe 
+  - Hunter Monroe
 ## LinkedIn Profiles
   - Hunter Monroe: https://www.linkedin.com/in/hunter-monroe-035ab0188/
 ## Github
