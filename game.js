@@ -2,10 +2,9 @@ class Game {
   constructor(player1, player2) {
     this.player1 = player1
     this.player2 = player2
-    this.turn = player2
+    this.turn = player1
     this.boardCount = 0
     this.winner = null
-    this.currentBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     this.winningCombinations = [
       [1, 2, 3],
       [1, 5, 9],
@@ -17,25 +16,6 @@ class Game {
       [7, 8, 9]
     ]
   }
-
-
-
-  //
-  // determinePlayerMoves() {
-  //   var playerMoves = []
-  //   playerMoves.push(this.player1.currentPicks)
-  //   checkCurrentBoard()
-  //   return playerMoves
-  // }
-  //
-  // checkCurrentBoard() {
-  //   for (var i = 0; i < this.currentBoard.length; i++) {
-  //     if (this.turn.currentPicks.includes(this.currentBoard[i])) {
-  //       this.currentBoard.splice(i, 1)
-  //       this.boardCount++
-  //     }
-  //   }
-  // }
 
   determinePlayerTurn() {
     this.boardCount++
