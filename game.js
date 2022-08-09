@@ -22,10 +22,8 @@ class Game {
     if (this.winner === null) {
       if (this.turn === player1) {
         return this.turn = player2
-        console.log(`this is player 2`)
       } else {
         return this.turn = player1
-        console.log(`this is player 1`)
       }
     }
   }
@@ -35,7 +33,6 @@ class Game {
       if ((player.currentPicks.includes(this.winningCombinations[i][0])) &&
         (player.currentPicks.includes(this.winningCombinations[i][1])) &&
         (player.currentPicks.includes(this.winningCombinations[i][2]))) {
-        console.log(`${player.id} is winner`)
         this.winner = player
         player.wins++
       }
