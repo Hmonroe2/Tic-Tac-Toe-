@@ -1,9 +1,6 @@
-/* *{
-  border: 2px solid red;
-} */
-*{
+* {
   font-family: 'Get Schwifty';
-src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
 }
 
 html {
@@ -19,52 +16,6 @@ body {
   height: 100%;
   width: 100%;
   background: black;
-}
-
-.left-player-container, .right-player-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 20%;
-  height: 100%;
-  background: linear-gradient(#32CD32,#0099EE,#FF007F, #BF40BF);
-  /* background-image: url("assets/cup1.jpeg"); */
-  background-clip: content-box;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-
-.box-1, .box-4, .box-2, .box-5, .box-6, .box-3 {
-  border-bottom: 10px solid #FF007F;
-  width: 33%;
-  height: 33%;
-
-}
-
-.box-1, .box-2, .box-4, .box-7, .box-5, .box-8 {
-  border-right: 10px solid #0099EE;
-  width: 33%;
-  height: 33%;
-}
-
-.box-9 {
-  width: 33%;
-  height: 33%;
-}
-
-p {
-  color: white;
-  font-size: 20px;
-}
-
-.main-game-container {
-  width: 60%;
-  background-color: white;
-}
-
-.box-1, {
-height: 131px;
-width: 131px;
 }
 
 h1 {
@@ -83,6 +34,53 @@ h1 {
   padding-left: 10px;
 }
 
+p {
+  color: white;
+  font-size: 20px;
+}
+
+.left-player-container, .right-player-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(#32CD32, #0099EE, #FF007F, #BF40BF);
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.box-1, .box-4, .box-2, .box-5, .box-6, .box-3 {
+  border-bottom: 10px solid #FF007F;
+  width: 126.33px;
+  height: 126.33px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.box-1, .box-2, .box-4, .box-7, .box-5, .box-8 {
+  border-right: 10px solid #0099EE;
+  width: 126.33px;
+  height: 126.33px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.box-9 {
+  width: 126.33px;
+  height: 126.33px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.main-game-container {
+  width: 60%;
+}
+
 .main-game-container {
   display: flex;
   flex-direction: column;
@@ -91,7 +89,7 @@ h1 {
   background-image: url("assets/rick-morty.jpeg");
   background-position: center;
   background-repeat: no-repeat;
-background-size: cover;
+  background-size: cover;
 }
 
 .main-game-box {
@@ -107,20 +105,18 @@ background-size: cover;
   width: 400px;
   display: table;
   border-collapse: collapse;
-
 }
 
-.playerToken{
-  height: 100px;
-  width:100px;
+.playerToken {
+  height: 100%;
+  width: 100%;
 }
 
-
-
-.avs, .redwing {
+.rick, .morty {
   height: 150px;
   width: 150px;
 }
+
 .hidden {
   display: none;
 }
