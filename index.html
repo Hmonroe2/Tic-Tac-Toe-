@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Tic Tac Toe</title>
-</head>
-
-<body>
-  <section class="left-player-container">
-    <aside class="left-player-box">
-      <figure class="left-player-icon">
-        <img class="avs" src="assets/rick.jpeg" alt="">
-      </figure>
-      <p>
-        Rick
-      </p>
-      <p class="winCount1">
-        Wins: 0
-      </p>
-    </aside>
-  </section>
-  <section class="main-game-container">
-    <h1 class="whos"> LETS PLAY TIC TAC TOE!! </h1>
-    <img class="winning-rick hidden" src="assets/rick-win.gif" alt"">
-    <img class="winning-morty hidden" src="assets/morty-win.gif" alt"">
-    <section class="main-game-box">
-    <table class="main-game hidden">
-      <tbody>
-        <tr>
-          <td id="box1"class="box-1" data-box="1"> </td>
-          <td id="box2"class="box-2" data-box="2"> </td>
-          <td id="box3"class="box-3" data-box="3"> </td>
-        </tr>
-        <tr>
-          <td id="box4"class="box-4" data-box="4"> </td>
-          <td id="box5"class="box-5" data-box="5"> </td>
-          <td id="box6"class="box-6" data-box="6"> </td>
-        </tr>
-        <tr>
-          <td id="box7"class="box-7" data-box="7"> </td>
-          <td id="box8"class="box-8" data-box="8"> </td>
-          <td id="box9"class="box-9" data-box="9"> </td>
-        </tr>
-      </tbody>
-    </table>
+  </head>
+  <body>
+    <section class="left-player-container">
+      <aside class="left-player-box">
+        <figure class="left-player-icon">
+          <img class="rick" src="assets/rick.jpeg" alt="Cartoon mugshot of rick">
+        </figure>
+        <p>
+          Rick
+        </p>
+        <p class="winCount1">
+          Wins: 0
+        </p>
+      </aside>
     </section>
-  </section>
-  <section class="right-player-container">
-    <aside class="right-player-box">
-      <figure class="right-player-icon">
-        <img class="redwing" src="assets/morty.jpeg" alt="">
-      </figure>
-      <p> Morty </p>
-      <p class="winCount2">
-        Wins: 0
-      </p>
-    </aside>
-  </section>
-
-  <script src= "player.js" charset="utf-8"></script>
-  <script src= "game.js" charset="utf-8"></script>
-  <script src = "main.js" charset="utf-8"></script>
-
-
-</body>
-
+    <section class="main-game-container">
+      <h1 class="whos"> LETS PLAY TIC TAC TOE!! </h1>
+      <img class="winning-rick hidden" src="assets/rick-win.gif" alt"cartoon gif of rick">
+      <img class="winning-morty hidden" src="assets/morty-win.gif" alt"cartoon gif of morty">
+      <section class="main-game-box">
+        <table class="main-game hidden">
+          <tbody>
+            <tr>
+              <td class="box-1" data-box="1"></td>
+              <td class="box-2" data-box="2"></td>
+              <td class="box-3" data-box="3"></td>
+            </tr>
+            <tr>
+              <td class="box-4" data-box="4"></td>
+              <td class="box-5" data-box="5"></td>
+              <td class="box-6" data-box="6"></td>
+            </tr>
+            <tr>
+              <td class="box-7" data-box="7"></td>
+              <td class="box-8" data-box="8"></td>
+              <td class="box-9" data-box="9"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <section class="right-player-container">
+      <aside class="right-player-box">
+        <figure class="right-player-icon">
+          <img class="morty" src="assets/morty.jpeg" alt="cartoon image of morty">
+        </figure>
+        <p> Morty </p>
+        <p class="winCount2">
+          Wins: 0
+        </p>
+      </aside>
+    </section>
+    <script src="player.js" charset="utf-8"></script>
+    <script src="game.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
 </html>
